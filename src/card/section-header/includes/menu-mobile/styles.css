@@ -1,0 +1,67 @@
+.mobile {
+  margin-right: var(--space-m);
+  padding: 2px 4px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: hsl(0 0% 100% /0.1);
+  border-radius: 4px;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.mobile_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: hsl(var(--color-primary) / 0.6);
+  z-index: 4;
+  display: none;
+}
+
+.mobile_bg {
+  position: absolute;
+  width: 98vw;
+  height: 90vh;
+  margin: -80px 0 0 -50px;
+  padding: 50px 20px 30px 20px;
+  background-color: hsl(var(--color-bg) / 0.9);
+  border-radius: var(--space-s);
+  z-index: 5;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  overflow: auto;
+}
+
+.change {
+  & .mobile_bg {
+    transform: none;
+  }
+  & .mobile_overlay {
+    display: block;
+    transition: 1s;
+  }
+}
+
+.mobile_bg ul {
+  margin: 20px 10px 40px 0;
+}
+
+.mobile_bg li {
+  margin: 20px 10px;
+}
+
+.mobile_bg a {
+  font-size: var(--step-1);
+  color: hsl(var(--color-primary));
+  text-decoration: none;
+}

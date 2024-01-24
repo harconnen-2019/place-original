@@ -1,0 +1,135 @@
+nav ul,
+nav li {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  position: relative;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+
+nav li > ul {
+  position: absolute;
+  pointer-events: none;
+}
+nav > ul {
+  display: flex;
+}
+
+nav > ul > li {
+  pointer-events: all;
+  opacity: 1;
+}
+ul li a {
+  white-space: nowrap;
+  display: block;
+}
+
+li:hover > ul {
+  pointer-events: initial;
+}
+li:hover > ul > li,
+ul:hover > li {
+  opacity: 1;
+}
+nav > ul > li li ul {
+  transform: translateX(100%);
+  top: 0;
+  right: 0;
+}
+
+/*----------  Навигация верхний уровень  ----------*/
+
+nav .nav__title {
+  font-family: var(--font-manrope);
+  font-size: var(--step-0);
+  color: #fff;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  margin: 0px 6px 6px 0px;
+  padding: 10px 10px;
+  border-radius: 3px;
+  position: relative;
+
+  &:hover {
+    background-color: hsl(var(--color-primary) / 0.6);
+  }
+}
+
+nav .nav__title--drop {
+  padding: 10px 10px 10px 40px;
+
+  /*Стрелка*/
+  & + ul:after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-top: 10px solid white;
+    left: 12px;
+    top: -30px;
+  }
+}
+
+/*----------  Навигация выпадающие элементы  ----------*/
+
+nav > ul > li > ul a {
+  font-family: var(--font-manrope);
+  font-size: var(--step-0);
+  background: hsl(var(--color-primary) / 0.8);
+  color: #fff;
+  min-width: 190px;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  margin: 0px 6px 6px 0px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+
+  &:hover:before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+  }
+
+  /*Стрелка*/
+  & + ul:after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-left: 10px solid white;
+    top: 20px;
+    left: -180px;
+    transition: opacity 0.6, transform 0s;
+  }
+}
+
+/*----------  Элементы анимации  ----------*/
+
+nav > ul > li > ul > li {
+  transition: transform 0.6s, opacity 0.6s;
+  transform: translateY(150%);
+  opacity: 0;
+}
+nav > ul > li:hover > ul > li,
+nav > ul > li.hover > ul > li {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+li > ul > li > ul > li {
+  transition: transform 0.6s, opacity 0.6s;
+  transform: translateX(195px) translateY(0%);
+  opacity: 0;
+}
+li > ul > li:hover > ul > li,
+li > ul > li.hover > ul > li {
+  transform: translateX(0) translateY(0%);
+  opacity: 1;
+}

@@ -1,0 +1,44 @@
+html,
+body {
+  background: hsl(var(--color-bg));
+  font-family: var(--font-sans);
+  font-size: 100%;
+  font-weight: normal;
+  line-height: var(--font-lineheight-0);
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+.container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+.hidden {
+  display: none;
+}

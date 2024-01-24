@@ -1,0 +1,11 @@
+@import "./css/normalize.css";
+@import "./css/vars.css";
+@import "./css/base.css";
+@import "./css/spinner.css";
+@import "./card/section-header/styles.css";
+@import "./card/section-header/includes/top/styles.css";
+@import "./card/section-header/includes/menu-navbar/styles.css";
+@import "./card/section-header/includes/menu-mobile/styles.css";
+@import "./card/section-header/includes/title/styles.css";
+@import "./card/section-footer/styles.css";
+@import "./card/section-search/styles.css";

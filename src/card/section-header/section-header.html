@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="header__bg"></div>
+  <div class="header__wrapper">
+    <!-- Закругление -->
+    <div class="header__shape">
+      <svg><use xlink:href="#shape"></use></svg>
+    </div>
+    <!-- /Закругление -->
+
+    <div class="header__container">
+      <!-- Верхняя линия с вкладками -->
+      <div class="top-line">
+        <include src="src/card/section-header/includes/top/top-lang-menu.html"></include>
+        <include src="src/card/section-header/includes/top/top-theme-toggle.html"></include>
+      </div>
+      <!-- /Верхняя линия с вкладками -->
+
+      <!-- Нав-бар -->
+      <div class="navbar">
+        
+        <!-- Мобильное меню -->
+        <div class="navbar__mobile">
+          <include src="src/card/section-header/includes/menu-mobile/menu-mobile.html"></include>
+        </div>
+        <!-- /Мобильное меню -->
+
+        <!-- Логотип -->
+        <div class="navbar__logo">
+          <a href="/"><img src="https://ccleaner.sendfile.ru/storage/place/ll/2023/11/20/logo-light.png" alt=""></a>
+        </div>
+        <!-- /Логотип -->
+
+        <!-- Верхнее меню -->
+        <div class="navbar__menu">
+          <include src="src/card/section-header/includes/menu-navbar/menu-navbar.html"></include>
+        </div>
+        <!-- /Верхнее меню -->
+
+        <!-- Кнопки меню -->
+        <div class="navbar__button">
+          <div class="navbar__button_element">
+            <!-- Кнопка поиска -->
+            <div class="search-button" onClick='document.querySelector(".search").style.display = "flex"'>
+              <svg><use xlink:href="#search"></use></svg>
+            </div>
+            <!-- /Кнопка поиска -->
+          </div>
+          <div class="navbar__button_element">
+            <!-- Кнопка пользователя -->
+            <div class="user">
+              <svg><use xlink:href="#user"></use></svg>
+            </div>
+            <!-- /Кнопка пользователя -->
+          </div>
+        </div>
+        <!-- /Кнопки меню -->
+      </div>
+      <!-- /Нав-бар -->
+      
+      <!-- Блок приветствия -->
+      <include src="src/card/section-header/includes/title/title.html"></include>
+      <!-- /Блок приветствия -->
+    </div>
+
+
+  </div>
+</header>

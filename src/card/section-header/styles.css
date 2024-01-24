@@ -1,0 +1,130 @@
+.header {
+  min-height: 566px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.header__bg,
+.header__wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.header__bg {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      hsl(var(--color-primary) / 0.9)
+    ),
+    url("https://ccleaner.sendfile.ru/storage/vault/files/2023/11/28/24a121da-c0a0-46cb-9892-724b34d7ecab.background.webp");
+  background-size: cover;
+  background-position: center, center;
+}
+
+.header__wrapper {
+  z-index: 2;
+}
+
+.header__shape {
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  overflow: hidden;
+
+  & > svg {
+    transform: scale(2);
+    width: 100%;
+    height: auto;
+    transform-origin: top center;
+    fill: hsl(var(--color-bg));
+  }
+}
+
+.header__container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+/*=============================================
+=            Нав-бар             =
+=============================================*/
+
+.navbar {
+  padding-top: var(--space-2xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__mobile {
+  display: none;
+  @media (max-width: 64em) {
+    display: block;
+  }
+}
+
+.navbar__logo {
+  width: 120px;
+}
+
+.navbar__menu {
+  flex: 1 0 auto;
+  padding-left: var(--space-l);
+
+  @media (max-width: 64em) {
+    & nav {
+      display: none;
+    }
+  }
+}
+
+.navbar__button {
+  display: flex;
+  gap: 10;
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/*----------  Кнопка поиска в нав-баре   ----------*/
+
+.header .search-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    border: 4px solid hsl(var(--color-primary) / 0.6);
+    transition: 0.5s;
+  }
+}
+
+/*----------  Кнопка пользователя в нав-баре  ----------*/
+
+.header .user {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  background-clip: padding-box;
+}
+
+/*=====  End of Нав-бар   ======*/

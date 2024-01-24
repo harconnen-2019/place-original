@@ -1,0 +1,9 @@
+# dependencies
+/.vscode
+/node_modules
+/temp
+/.parcel-cache
+/dist
+
+.env
+temp.svg
