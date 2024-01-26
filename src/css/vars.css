@@ -68,6 +68,7 @@
   --color-bg: 0 0% 100%;
   --color-primary: 216 87% 48%;
   --color-text: var(--color-text-light-theme);
+  --color-note: 215 20% 65%;
   --color-bg-footer: 216 47% 48%;
   --color-footer-text: 0 0% 100%;
 }
@@ -75,6 +76,7 @@
   --color-bg: 180 2% 10%;
   --color-primary: 216 87% 48%;
   --color-text: var(--color-text-dark-theme);
+  --color-note: 215 20% 65%;
   --color-bg-footer: 216 67% 28%;
   --color-footer-text: 0 0% 100%;
 }

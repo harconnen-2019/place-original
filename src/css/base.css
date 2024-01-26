@@ -3,7 +3,7 @@ body {
   background: hsl(var(--color-bg));
   font-family: var(--font-sans);
   font-size: 100%;
-  font-weight: normal;
+  font-weight: 400;
   line-height: var(--font-lineheight-0);
 }
 
