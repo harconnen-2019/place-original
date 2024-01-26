@@ -1,0 +1,61 @@
+.faq__accordion {
+  background-color: hsl(var(--color-primary) / 0.2);
+  border-radius: var(--space-s);
+  font-size: var(--step-1);
+  font-family: var(--font-manrope);
+  color: hsl(var(--color-text));
+  cursor: pointer;
+  padding: var(--space-m);
+  margin-block: 3px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+
+  &:after {
+    content: "\02795"; /* Unicode character for "plus" sign (+) */
+    font-size: var(--step-1);
+    margin-left: var(--space-s);
+    float: right;
+    color: white;
+
+    @media (max-width: 64em) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 64em) {
+    font-size: var(--step-0);
+  }
+}
+
+.active,
+.faq__accordion:hover {
+  color: white;
+  background-color: hsl(var(--color-primary) / 0.3);
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.faq__panel {
+  color: hsl(var(--color-text));
+  font-size: var(--step-0);
+  line-height: var(--font-lineheight-2);
+  padding: 0 var(--space-m);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.active + .faq__panel {
+  border: 1px solid hsl(var(--color-primary) / 0.2);
+  border-top: none;
+  border-bottom-left-radius: var(--space-s);
+  border-bottom-right-radius: var(--space-s);
+  padding-top: 18px;
+  margin-top: -18px;
+  margin-bottom: var(--space-s);
+}
