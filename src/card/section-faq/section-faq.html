@@ -1,7 +1,33 @@
 <div class="faq" data-url="?application_id=44b803b4-46e5-464a-99d4-68c4ea8317de&lang=ru"></div>
 <div class="faq__form">
-  <button class="faq__accordion" id="acc-form">Добавить свой вопрос</button>
+  <button class="faq__accordion secondary--bg" id="acc-form">Добавить свой вопрос</button>
     <div class="faq__panel">
-      <p>Да, с функцией OCR вы можете распознавать и редактировать текст даже в сканированных документах.</p>
+      <div id="displayFormQuestion">
+        <div class="form">
+          <form id="feedbackForm" method="POST">
+            <input type="hidden" name="" value="">
+            <div class="form__row form__row__w--50">
+              <input name="userName" id="userName" type="text" placeholder="Ваше имя" required="">
+            </div>
+            <div class="form__row form__row__w--100">
+              <input name="question" id="question" required=""  placeholder="Ваш вопрос">
+              <input type="hidden" name="application_id" value="" id="applicationId">
+            </div>
+            <div class="form__row">
+              <input type="submit" id="submit_question" name="send" value="Отправить вопрос">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="success" role="alert" id="displayFormQuestionSuccess">
+        Ваш вопрос успешно отправлен
+      </div>
+
+      <div class="danger" role="alert" id="displayFormQuestionDanger">
+        Что-то пошло не так, попробуйте позже
+      </div>
     </div>
+
+    
 </div>

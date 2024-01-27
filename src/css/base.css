@@ -50,3 +50,29 @@ h2 {
   line-height: var(--font-lineheight-2);
   border-bottom: 1px solid hsl(var(--color-primary) / 0.2);
 }
+
+.success {
+  background-color: hsl(var(--color-success) / 0.5);
+  color: white;
+  font-size: var(--step-0);
+  padding: var(--space-m);
+  border-radius: var(--space-s);
+  margin-block: var(--space-m);
+}
+
+.danger {
+  background-color: hsl(var(--color-danger) / 0.5);
+  color: white;
+  font-size: var(--step-0);
+  padding: var(--space-m);
+  border-radius: var(--space-s);
+  margin-block: var(--space-m);
+}
+
+.secondary--bg {
+  background-color: hsl(var(--color-secondary) / 0.3) !important;
+  color: hsl(var(--color-text)) !important;
+  &:hover {
+    color: hsl(var(--color-secondary)) !important;
+  }
+}

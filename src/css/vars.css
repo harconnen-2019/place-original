@@ -67,6 +67,9 @@
 .theme-default {
   --color-bg: 0 0% 100%;
   --color-primary: 216 87% 48%;
+  --color-secondary: 66 87% 48%;
+  --color-success: 120 100% 40%;
+  --color-danger: 0 100% 50%;
   --color-text: var(--color-text-light-theme);
   --color-note: 215 20% 65%;
   --color-bg-footer: 216 47% 48%;
@@ -75,6 +78,9 @@
 [data-theme="dark"].theme-default {
   --color-bg: 180 2% 10%;
   --color-primary: 216 87% 48%;
+  --color-secondary: 66 87% 48%;
+  --color-success: 120 100% 40%;
+  --color-danger: 0 100% 50%;
   --color-text: var(--color-text-dark-theme);
   --color-note: 215 20% 65%;
   --color-bg-footer: 216 67% 28%;

@@ -2,6 +2,7 @@
 @import "./css/vars.css";
 @import "./css/base.css";
 @import "./css/spinner.css";
+@import "./css/form.css";
 @import "./card/section-header/styles.css";
 @import "./card/section-header/includes/top/styles.css";
 @import "./card/section-header/includes/menu-navbar/styles.css";

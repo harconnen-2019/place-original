@@ -102,7 +102,7 @@ function ListFaq() {
           value: data.val,
           container: div,
           Loading: () => div({ class: "la-ball-clip-rotate la" }, div()),
-          Error: () => "🙀 Request failed.",
+          Error: () => div({ class: "danger" }, "🙀 Request failed."),
         },
         (faqs) => listFaq(faqs)
       ),
@@ -120,3 +120,56 @@ accForm.addEventListener("click", function () {
   this.classList.toggle("active");
   panelToggle(this);
 });
+
+/**
+ * Отправка формы
+ */
+
+async function sendData(data) {
+  return await fetch(API.FAQ, {
+    method: "POST",
+    headers: {
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+    },
+    body: data,
+  });
+}
+
+async function handleFormSubmit(event) {
+  event.preventDefault();
+
+  buttonQuestionDisabled();
+  const userName = document.getElementById("userName").value;
+  const question = document.getElementById("question").value;
+  const application_id = document.getElementById("applicationId").value;
+
+  const data = JSON.stringify({
+    user_name: userName,
+    question: question,
+    application_id: application_id,
+  });
+
+  const response = await sendData(data);
+}
+
+const faqForm = document.getElementById("feedbackForm");
+faqForm.addEventListener("submit", handleFormSubmit);
+
+function buttonQuestionDisabled() {
+  document.getElementById("submit_question").disabled = true;
+}
+
+function buttonQuestionEnabled() {
+  document.getElementById("submit_question").disabled = false;
+}
+
+function upSendQuestion() {
+  document.getElementById("displayFormQuestion").hide();
+  document.getElementById("displayFormQuestionDanger").hide();
+  document.getElementById("displayFormQuestionSuccess").show();
+}
+
+function upSendQuestionError() {
+  document.getElementById("displayFormQuestionDanger").show();
+}
