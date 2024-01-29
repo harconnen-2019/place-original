@@ -2,9 +2,6 @@
   --spacer: 1rem;
   --transition-duration: 0.3s;
   --transition-easing: cubic-bezier(0.42, 0.42, 0.84, 1);
-  --color-neutral: #c5c5c5;
-  --color-active: #707070;
-  --color-accent: #2196f3;
 
   & .scroll-snap-slider {
     gap: var(--space-s);
@@ -92,14 +89,6 @@
     justify-content: center;
     opacity: 1;
     transition: opacity var(--transition-duration) var(--transition-easing);
-  }
-
-  & .indicators.-hidden {
-    opacity: 0;
-  }
-
-  & .indicators input[type="radio"] {
-    display: none;
   }
 
   & .indicator {
