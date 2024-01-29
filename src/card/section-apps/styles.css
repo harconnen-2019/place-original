@@ -1,0 +1,50 @@
+.apps {
+  --slider-w: 230px;
+
+  & li {
+    border-radius: var(--space-s);
+    transition: 0.5s;
+
+    &:hover {
+      background-color: hsl(var(--color-primary) / 0.1);
+      color: hsl(var(--color-primary) / 0.8);
+      transition: 0.5s;
+    }
+  }
+
+  & a {
+    text-decoration: none;
+    color: hsl(var(--color-primary));
+  }
+
+  & figure {
+    padding: var(--space-s);
+    margin: 0;
+  }
+
+  & img {
+    border-radius: var(--space-s);
+  }
+
+  & figcaption {
+    font-size: var(--step-0);
+    text-align: center;
+    line-height: var(--font-lineheight-2);
+    padding: var(--space-s);
+  }
+
+  & .scroll-snap-slide {
+    justify-content: flex-start;
+  }
+
+  & .scroll-snap-slider .scroll-snap-slide {
+    scroll-snap-align: start;
+    width: var(--slider-w);
+  }
+
+  & .scroll-snap-slider.-multi,
+  & .scroll-snap-slider.-responsive {
+    max-width: calc(5 * var(--slider-w));
+    width: 100%;
+  }
+}

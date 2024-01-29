@@ -23,7 +23,7 @@ nav > ul > li {
   pointer-events: all;
   opacity: 1;
 }
-ul li a {
+nav ul li a {
   white-space: nowrap;
   display: block;
 }

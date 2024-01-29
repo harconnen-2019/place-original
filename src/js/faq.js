@@ -78,21 +78,29 @@ function ListFaq() {
    * @returns
    */
   function listFaq(arr) {
-    return div(
-      arr.map((el) =>
-        div(
-          button(
-            {
-              onclick: () => handleChange(el.id),
-              class: "faq__accordion",
-              id: `acc-${el.id}`,
-            },
-            el.question
-          ),
-          div({ class: "faq__panel" }, p(el.answer))
+    const faq_num = document
+      .getElementsByClassName("faq")[0]
+      .getAttribute("data-item");
+
+    if (Array.isArray(arr) && arr.length > 0) {
+      return div(
+        arr.map((el) =>
+          div(
+            button(
+              {
+                onclick: () => handleChange(el.id),
+                class: "faq__accordion",
+                id: `acc-${el.id}`,
+              },
+              el.question
+            ),
+            div({ class: "faq__panel" }, p(el.answer))
+          )
         )
-      )
-    );
+      );
+    } else {
+      return p({ class: "no-item" }, faq_num);
+    }
   }
 
   return [
@@ -150,7 +158,16 @@ async function handleFormSubmit(event) {
     application_id: application_id,
   });
 
-  const response = await sendData(data);
+  const { status, error } = await sendData(data);
+
+  console.log(status, error.message);
+
+  if (status === 200) {
+    upSendQuestion();
+  } else {
+    upSendQuestionError();
+    buttonQuestionEnabled();
+  }
 }
 
 const faqForm = document.getElementById("feedbackForm");

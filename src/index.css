@@ -3,6 +3,7 @@
 @import "./css/base.css";
 @import "./css/spinner.css";
 @import "./css/form.css";
+@import "npm:scroll-snap-slider/dist/scroll-snap-slider.css";
 @import "./card/section-header/styles.css";
 @import "./card/section-header/includes/top/styles.css";
 @import "./card/section-header/includes/menu-navbar/styles.css";
@@ -12,3 +13,4 @@
 @import "./card/section-search/styles.css";
 @import "./card/section-features/styles.css";
 @import "./card/section-faq/styles.css";
+@import "./card/section-apps/styles.css";
