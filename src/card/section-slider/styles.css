@@ -1,0 +1,134 @@
+.slider {
+  --spacer: 1rem;
+  --transition-duration: 0.3s;
+  --transition-easing: cubic-bezier(0.42, 0.42, 0.84, 1);
+  --color-neutral: #c5c5c5;
+  --color-active: #707070;
+  --color-accent: #2196f3;
+
+  & .scroll-snap-slider {
+    gap: var(--space-s);
+  }
+
+  & .scroll-snap-slide {
+    justify-content: flex-start;
+
+    @media (max-width: 64em) {
+      background-color: hsl(var(--color-primary) / 0.1);
+      border-radius: var(--space-m);
+    }
+  }
+
+  & figure {
+    display: flex;
+    gap: var(--space-s);
+    margin: 0;
+
+    @media (max-width: 64em) {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+  }
+
+  & figcaption {
+    position: relative;
+    width: 30%;
+    background-color: hsl(var(--color-primary) / 0.1);
+    border-top-left-radius: var(--space-m);
+    border-bottom-left-radius: var(--space-m);
+    padding: var(--space-m);
+    color: hsl(var(--color-note));
+    font-size: var(--step-0);
+    line-height: var(--font-lineheight-2);
+
+    @media (max-width: 64em) {
+      width: auto;
+      background-color: transparent;
+      margin-top: -5px;
+      border-radius: 0;
+    }
+
+    & h3 {
+      font-family: var(--font-manrope);
+      font-size: var(--step-3);
+      margin-block: var(--space-s);
+    }
+
+    @media (max-width: 64em) {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      content: "";
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid hsl(var(--color-primary) / 0.1);
+      margin-top: -15px;
+      z-index: 100;
+    }
+  }
+
+  & img {
+    border-top-right-radius: var(--space-m);
+    border-bottom-right-radius: var(--space-m);
+
+    @media (max-width: 64em) {
+      border-top-left-radius: var(--space-m);
+      border-top-right-radius: var(--space-m);
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  & .indicators {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2xs);
+    justify-content: center;
+    opacity: 1;
+    transition: opacity var(--transition-duration) var(--transition-easing);
+  }
+
+  & .indicators.-hidden {
+    opacity: 0;
+  }
+
+  & .indicators input[type="radio"] {
+    display: none;
+  }
+
+  & .indicator {
+    background-color: hsl(var(--color-note) / 0.5);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    height: var(--spacer);
+    transition: background-color var(--transition-duration)
+      var(--transition-easing);
+    width: var(--spacer);
+  }
+
+  & .indicator:not(.-active):hover {
+    background-color: hsl(var(--color-primary) / 0.5);
+  }
+
+  & .indicators .indicator.-active {
+    background-color: hsl(var(--color-primary));
+  }
+
+  & .visually-hidden:not(:focus, :active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
